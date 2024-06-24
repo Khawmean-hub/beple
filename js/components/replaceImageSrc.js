@@ -124,7 +124,7 @@ function applyEditor(id){
 function onCopy(){
     const str = rightEditor.getValue()
     if(str){
-        copyToClipboard();
+        copyToClipboard(str);
     }else{
         toastr.error('No data to copy.')
     }
