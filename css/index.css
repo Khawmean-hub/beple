@@ -1,0 +1,96 @@
+.my_nav_bar {
+    background-color: #e36226;
+    padding: 3px 30px;
+    margin: 0 !important;
+}
+
+.plt_30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.pt_20 {
+    padding-top: 20px;
+}
+
+#container {
+    display: flex;
+    /* border: 1px solid #fff5f0; */
+}
+
+.column {
+    width: 50%;
+    /* border-radius: 5px; */
+    /* border: 1px solid #ccc; */
+    /* box-sizing: border-box; */
+    /* height: 100vh; */
+}
+
+
+#editor1,
+#editor2 {
+    outline: 1px solid #e1eeff;
+    height: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    background: white;
+    margin: 0;
+}
+
+#editor1 {
+    margin-right: 2px;
+}
+
+#editor2 {
+    margin-left: 2px;
+}
+
+.column:first-child {
+    border-right: 2px solid #eeeeee;
+}
+
+#editor1:focus,
+#editor2:focus {
+    outline: 1px solid #4495ff;
+}
+
+.label_editor {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.display_flex {
+    display: flex;
+    align-items: center;
+}
+
+.mr_10 {
+    margin-right: 10px !important;
+}
+
+.mr_30 {
+    margin-right: 30px !important;
+}
+
+body {
+    background: rgb(241, 241, 241);
+}
+
+.CodeMirror {
+    height: auto !important;
+    /* min-height: 400px !important; */
+}
+#btn_copy {
+    margin-left: 10px;
+}
+
+#my_iframe {
+    width: 100%;
+    height: calc(100vh - 50px);
+}
+
+#replace_img_form label{
+    margin-left: 30px !important;
+}

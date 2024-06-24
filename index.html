@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BePle Tool</title>
+  <link rel="stylesheet" href="js/dist/semantic.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/toast.css" />
+  <link rel="stylesheet" href="css/stack_overflow_skin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="js/other/jquery.js"></script>
+  <script src="js/dist/semantic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
+
+  <script src="js/other/highitlight.js"></script>
+  <script src="js/other/toastr.js"></script>
+  <script src="js/other/tidy.js"></script>
+  
+
+</head>
+
+<body>
+
+  <!-- ======================================== Navbar ======================================== -->
+  <div class="ui secondary menu inverted small my_nav_bar">
+    <div class="item active" data-tab="replace-image">Replace Image</div>
+    <div class="item" data-tab="events_functions1">Functions I</div>
+    <div class="item" data-tab="events_functions2">Functions II</div>
+  </div>
+
+  <div class="">
+
+    <!-- ======================================== Tab Body ======================================== -->
+    <div class="ui bottom attached active tab">
+      <div class="ui bottom attached tab active plt_30 pt_20" data-tab="replace-image">
+        <form class="ui form small" onsubmit="return false" id="replace_img_form">
+          <div class="two fields">
+            <div class="field">
+              <label><div class="ui teal horizontal label">Dev</div>Paste new image url here.</label>
+              <textarea rows="5" id="newSrcBox" spellcheck="false"></textarea>
+            </div>
+            <div class="field">
+              <label><div class="ui orange horizontal label">Real</div> Paste new image url here.</label>
+              <textarea rows="5" id="newSrcBoxReal" spellcheck="false"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div>
+              <div class="label_editor">
+                <label>Paste Original HTML here</label>
+                <div class="display_flex">
+                  <div class="mr_30">Result: </div>
+                  <div class="ui slider checkbox" >
+                    <input type="checkbox" id="mode_check">
+                    <label id="mode_txt" >Dev</label>
+                  </div>
+                  <div class="ui button mini" id="btn_copy">Copy</div>
+                </div>
+              </div>
+            </div>
+            <div id="container">
+              <div id="leftColumn" class="column">
+                <!-- <pre id="editor1" contenteditable="true" spellcheck="false"></pre> -->
+                 <textarea id="box1" rows="40" spellcheck="false"></textarea>
+              </div>
+              <div id="rightColumn" class="column">
+                <!-- <pre id="editor2" contenteditable="true" spellcheck="false"></pre> -->
+                 <textarea id="box2" rows="40" spellcheck="false"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+
+
+      <!-- ========================== Functioin ========================== -->
+      <div class="ui bottom attached tab" data-tab="events_functions1">
+        <iframe id="my_iframe" src="https://khawmean-hub.github.io/tinynoted/linkView.html?data=%22%253Cp%253Esource%2520%253D%2526gt%253B%2520%253Ca%2520title%253D%2522google%2520sheet%2522%2520href%253D%2522https%253A%252F%252Fdocs.google.com%252Fspreadsheets%252Fd%252F12CUfDdLrVlqPu3aEr5PNEilOKJ9RBAXoPJed16nDbJs%252Fedit%253Fgid%253D0%2523gid%253D0%2522%2520target%253D%2522_blank%2522%2520rel%253D%2522noopener%2522%253Egoogle%2520sheet%253C%252Fa%253E%253C%252Fp%253E%250A%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E%253Cstrong%253E1.%2520Redirect%2520link%2520external%253C%252Fstrong%253E%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cp%253EThis%2520function%2520will%2520redirect%2520to%2520the%2520link%2520but%2520outside%2520the%2520app.%253C%252Fp%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253E%2524('.img_click').on(%257B%250A%2509click%253A%2520function%2520()%2520%257B%250A%2509%2509var%2520_url%2520%253D%2520%2522https%253A%252F%252FihzGRm1Lf0i6bIN41hkmdQ.ap1.adtouch.dfinery.io%252Fapi%252Fv1%252Fclick%252FgOkteOyvj0eh8QklqhYsTA%2522%253B%250A%2509%2509ComWebkey.callAppActionUrl(ActionCode.ETC_URL%252C%2520_url)%253B%250A%2509%257D%250A%257D)%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E%253Cstrong%253E2.%2520Redirect%2520Event%253C%252Fstrong%253E%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cpre%2520class%253D%2522language-html%2522%253E%253Ccode%253E%2526lt%253Ba%2520onclick%253D%2522location.href%253D'notice_list.act%253Fseq%253D2501'%2522%2526gt%253B%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E%253Cstrong%253E3.%2520Function%2520count%2520attenden%253C%252Fstrong%253E%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cp%253EThis%2520funtion%2520will%2520update%2520when%2520the%2520user%2520or%2520customer%2520click%2520on%2520the%2520event%2520button%2520in%2520the%2520event.%253C%252Fp%253E%250A%253Cul%253E%250A%253Cli%253E%253Cstrong%253ECount%2520only%2520one%2520time%253C%252Fstrong%253E%253C%252Fli%253E%250A%253C%252Ful%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253E%252F**%250A%2520*%2520%25EC%259D%25B4%25EB%25B2%25A4%25ED%258A%25B8%2520%25EC%259D%2591%25EB%25AA%25A8%2520%25ED%259B%2584%2520URL%2520%25EC%2597%25B4%25EA%25B8%25B0%250A%2520*%2520%25ED%2595%259C%25EB%25B2%2588%25EB%25A7%258C%2520%25EC%259D%25B4%25EB%25B2%25A4%25ED%258A%25B8%2520%25EC%259D%2591%25EB%25AA%25A8(%25EC%25B0%25B8%25EC%2597%25AC)%250A%2520*%2520%2540param%2520%2520%257B%2520%255BeventKey%255D%252C%2520%255BeventValue%255D%252C%2520%255Burl%255D%252C%2520%255Bcallback%255D%2520%257D%250A%2520*%2520%2540return%250A%2520**%252F%250AapplyEvtAndGo(option)%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cul%253E%250A%253Cli%253E%253Cstrong%253ECount%2520duplicate%253C%252Fstrong%253E%253C%252Fli%253E%250A%253C%252Ful%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253E%252F**%250A%2520*%2520%25EC%259D%25B4%25EB%25B2%25A4%25ED%258A%25B8%2520%25EC%259D%2591%25EB%25AA%25A8%25ED%2595%2598%25EA%25B8%25B0%250A%2520*%2520%25ED%2581%25B4%25EB%25A6%25AD%2520%25EC%258B%259C%2520%25EC%259D%25B4%25EB%25B2%25A4%25ED%258A%25B8%25201%25EB%25B2%2588%2520%25EC%259D%2591%25EB%25AA%25A8(1%25EB%25AA%2585%2520N%25EC%25B0%25B8%25EC%2597%25AC)%250A%2520*%2520%2540param%2520%2520%257B%2520%255BeventKey%255D%252C%2520%255BeventValue%255D%252C%2520%255Burl%255D%252C%2520%255Bcallback%255D%2520%257D%250A%2520*%2520%2540return%250A%2520**%252F%250AapplyEvtCountAndGo(option)%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cp%253E%253Cem%253EExample%253A%253C%252Fem%253E%253C%252Fp%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253Econst%2520url%2520%253D%2520'https%253A%252F%252Fkhawmean-hub.github.io%252Fkosign_url_decode_json%252F'%253B%250A%250AapplyEvtCountAndGo(%257BeventKey%253A%2520'A'%252C%2520eventValue%253A%2520'%25EC%259E%25A5%25EB%25B9%2584%25EC%2583%2581%25EA%25B8%2588%2520%25ED%2586%25B5%25EC%259E%25A5%2520%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0'%252C%2520url%253A%2520url%2520%257D)%253B%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cp%2520style%253D%2522padding-left%253A%252040px%253B%2522%253E%253Cspan%2520style%253D%2522color%253A%2520rgb(53%252C%2520152%252C%2520219)%253B%2522%253EeventKey%253A%253C%252Fspan%253E%2526nbsp%253B%2520is%2520a%2520button%2520Index%2520if%2520Button%2520index%25200%2520%253D%2520A%252C%25201%2520%253D%2520B%253C%252Fp%253E%250A%253Cp%2520style%253D%2522padding-left%253A%252040px%253B%2522%253E%253Cspan%2520style%253D%2522color%253A%2520rgb(185%252C%2520106%252C%2520217)%253B%2522%253EeventValue%253A%2520%253C%252Fspan%253Eis%2520a%2520button%2520text%2520if%2520%253Cbutton%2520class%253D%2522btn%2520authorize%2520unlocked%2522%253EClick%2520me%253C%252Fbutton%253E%2526nbsp%253B%2520text%2520is%2520%253D%2520'Click%2520me'%2520then%2520eventValue%2520%253D%2520'Click%2520me'%253C%252Fp%253E%250A%253Cp%2520style%253D%2522padding-left%253A%252040px%253B%2522%253E%253Cspan%2520style%253D%2522color%253A%2520rgb(22%252C%2520145%252C%2520121)%253B%2522%253Eurl%253A%253C%252Fspan%253E%2520is%2520when%2520user%2520click%2520the%2520button%2520if%2520url%2520is%2520exist%2520it%2520will%2520be%2520redect%2520to%2520the%2520link%2520if%2520not%2520it%2520doen't.%253C%252Fp%253E%250A%253Cp%2520style%253D%2522padding-left%253A%252040px%253B%2522%253E%2526nbsp%253B%253C%252Fp%253E%22" frameborder="0"></iframe>
+      </div>
+
+      <!-- ========================== Functioin ========================== -->
+      <div class="ui bottom attached tab" data-tab="events_functions2">
+        <iframe id="my_iframe" src="https://khawmean-hub.github.io/tinynoted/linkView.html?data=%22%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E%253Cstrong%253E4.%2520Agree%2520Recieve%2520Marketing%253C%252Fstrong%253E%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252014pt%253B%2522%253E%25EB%25A7%2588%25EA%25B2%258C%25ED%258C%2585%2520%25EC%2588%2598%25EC%258B%25A0%25EB%258F%2599%25EC%259D%2598%25ED%2595%2598%25EA%25B8%25B0%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253E%2524('.marketing_click').on(%257B%250A%2509click%2520%253A%2520function()%257B%250A%2509%2509setMrktAgrYn('Y')%250A%2509%257D%250A%257D)%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%253Cstrong%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E5.%2520%25EC%259D%25B4%25EB%25B2%25A4%25ED%258A%25B8%2520%25EC%259D%2591%25EB%25AA%25A8%25ED%2595%2598%25EA%25B8%25B0%253C%252Fspan%253E%253C%252Fstrong%253E%253C%252Fp%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253Echk_apply_event()%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cul%253E%250A%253Cli%253E%253Cem%253E%2526nbsp%253BMsg1st%253A%2520click%2520attend%25201st%2520time%2520msg%2526nbsp%253B%253C%252Fem%253E%253C%252Fli%253E%250A%253Cli%253E%253Cem%253EMsgAfter1st%253A%2520click%2520attend%2520more%2520than%2520one%2520time%2520msg%253C%252Fem%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253Echk_apply_event('Msg1st'%252C'MsgAfter1st')%253C%252Fcode%253E%253C%252Fpre%253E%250A%253C%252Fli%253E%250A%253Cli%253EExample%253A%2520%253Cstrong%253E%253Cspan%2520style%253D%2522color%253A%2520rgb(224%252C%252062%252C%252045)%253B%2522%253E%25EA%25B3%25B5%25EC%25A7%2580%25EB%25B2%2588%25ED%2598%25B8%253A%25201857%253C%252Fspan%253E%253C%252Fstrong%253E%253C%252Fli%253E%250A%253C%252Ful%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2520color%253A%2520rgb(0%252C%25200%252C%25200)%253B%2522%253E%253Cstrong%253E6.%2520%253Cspan%2520style%253D%2522color%253A%2520rgb(0%252C%25200%252C%25200)%253B%2522%253E%25EB%25B9%2584%25EB%259E%259C%25EB%2593%259C%25EC%2583%2581%25ED%2592%2588%25EA%25B6%258C%2520%25EC%2584%25A0%25EB%25AC%25BC%25ED%2595%2598%25EB%259F%25AC%2520%25EA%25B0%2580%25EA%25B8%25B0%253C%252Fspan%253E%253C%252Fstrong%253E%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cul%253E%250A%253Cli%2520style%253D%2522color%253A%2520rgb(0%252C%25200%252C%25200)%253B%2522%253E%253Cspan%2520style%253D%2522color%253A%2520rgb(0%252C%25200%252C%25200)%253B%2522%253E%25EB%25B9%2584%25EB%259E%259C%25EB%2593%259C%25EC%2583%2581%25ED%2592%2588%25EA%25B6%258C%2520%25EC%2584%25A0%25EB%25AC%25BC%25ED%2595%2598%25EB%259F%25AC%2520%25EA%25B0%2580%25EA%25B8%25B0%2520%253C%252Fspan%253E%253C%252Fli%253E%250A%253Cli%253E%253Cspan%2520style%253D%2522color%253A%2520rgb(0%252C%25200%252C%25200)%253B%2522%253E%25EA%25B5%25AC%25EB%25A7%25A4%25ED%2595%2598%25EB%259F%25AC%2520%25EA%25B0%2580%25EA%25B8%25B0%253C%252Fspan%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253EComWebkey.callAppActionWithParam(ActionCode.MOVE_MORE%252C%2520%257B_code%253A%2520'B100'%252Cdata%2520%253A%257B_param_yn%2520%253A%2520'N'%252C%257D%257D)%253C%252Fcode%253E%253C%252Fpre%253E%250A%253C%252Fli%253E%250A%253C%252Ful%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%253Cstrong%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E7.%2520App%2520link%253C%252Fspan%253E%253C%252Fstrong%253E%253C%252Fp%253E%250A%253Cp%2520style%253D%2522padding-left%253A%252040px%253B%2522%253EAdroid%2520app%2520link%253C%252Fp%253E%250A%253Cul%253E%250A%253Cli%253E%250A%253Cpre%2520class%253D%2522language-c%2522%253E%253Ccode%253Ehttps%253A%252F%252Fplay.google.com%252Fstore%252Fapps%252Fdetails%253Fid%253Dcom.bizplay.bizzeropay%253C%252Fcode%253E%253C%252Fpre%253E%250A%253C%252Fli%253E%250A%253C%252Ful%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cul%253E%250A%253Cli%253EiOS%2520app%2520link%250A%253Cpre%2520class%253D%2522language-c%2522%253E%253Ccode%253Ehttps%253A%252F%252Fapps.apple.com%252Fkr%252Fapp%252F%2525EB%2525B9%252584%2525ED%252594%25258C-%2525EC%2525A0%25259C%2525EB%2525A1%25259C%2525ED%25258E%252598%2525EC%25259D%2525B4%252Fid1481328073%253C%252Fcode%253E%253C%252Fpre%253E%250A%253C%252Fli%253E%250A%253C%252Ful%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%250A%253Cp%253E%253Cspan%2520style%253D%2522font-size%253A%252018pt%253B%2522%253E%253Cstrong%253E8.%2520%25EB%25B8%258C%25EB%259E%259C%25EB%2593%259C%2520%25EC%2583%2581%25ED%2592%2588%25EA%25B6%258C%2520%25EA%25B5%25AC%25EB%25A7%25A4%25ED%2595%2598%25EA%25B8%25B0%2520Main%2520screen%253C%252Fstrong%253E%253C%252Fspan%253E%253C%252Fp%253E%250A%253Cpre%2520class%253D%2522language-javascript%2522%253E%253Ccode%253ECommon.go_loc('brnd_gift_main_list.act')%253C%252Fcode%253E%253C%252Fpre%253E%250A%253Cp%253E%2526nbsp%253B%253C%252Fp%253E%22" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ---------------- Script ---------------- -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/utils/global.js"></script>
+  <script src="js/utils/util.js"></script>
+  <script src="js/components/replaceAppearenc.js"></script>
+  <script src="js/components/replaceImageSrc.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
