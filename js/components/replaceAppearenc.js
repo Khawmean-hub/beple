@@ -20,12 +20,18 @@ function setModeLooking(){
     }
 }
 
+/**
+ * Set style
+ * @param color
+ */
 function setCss(color){
     //Nav bar
     $('.my_nav_bar').css('background', color)
 }
 
-
+/**
+ * On changed mode
+ */
 function onChangeMode(){
     if($('#mode_check').prop('checked')){
         MODE.setReal()

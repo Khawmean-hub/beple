@@ -86,7 +86,7 @@ body {
     margin-left: 10px;
 }
 
-#my_iframe {
+.my_iframe {
     width: 100%;
     height: calc(100vh - 50px);
 }

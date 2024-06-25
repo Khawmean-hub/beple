@@ -11,7 +11,7 @@ let topEditorReal;
 $(document).on('click', '#btn_copy', onCopy)
 
 
-//================================================= Funtions =================================================
+//================================================= Functions =================================================
 /**
  * ON Replace image
  */
@@ -41,18 +41,18 @@ function onReplace(isOnCheck) {
 
     //find all img src
     let old = getSrc(leftEditor.getValue())
-    let newVlaueForRightBox  = leftEditor.getValue();
+    let newValueForRightBox  = leftEditor.getValue();
 
     old.forEach(old => {
         const fileName = old.match(onlyLatSlash)[1];
         console.log('fileName , ', fileName)
         if(newSrc.some(newSrc => getOnlyNameForNewSrc(newSrc) === fileName)){
             const newSrcStr = newSrc.find(v=> getOnlyNameForNewSrc(v) === fileName);
-            newVlaueForRightBox = newVlaueForRightBox.replace(old, newSrcStr)
+            newValueForRightBox = newValueForRightBox.replace(old, newSrcStr)
         }
     })
 
-    rightEditor.setValue(newVlaueForRightBox)
+    rightEditor.setValue(newValueForRightBox)
     setModeLooking()
 }
 
@@ -84,7 +84,7 @@ function getSrc(htmlStr) {
 }
 
 /**
- * Make mirrow editor
+ * Make mirror editor
  */
 function makeEditor(){
     leftEditor  = applyEditor('box1')

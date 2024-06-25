@@ -2,9 +2,9 @@ $(function () {
     $("#leftColumn").resizable({
         handles: 'e',
         resize: function (event, ui) {
-            var containerWidth = $("#container").width();
-            var leftWidth = ui.size.width;
-            var rightWidth = containerWidth - leftWidth;
+            const containerWidth = $("#container").width();
+            const leftWidth = ui.size.width;
+            const rightWidth = containerWidth - leftWidth;
             $("#rightColumn").width(rightWidth);
         }
     });
@@ -12,7 +12,6 @@ $(function () {
     setModeLooking()
     makeEditor();
 
-    $('.menu .item')
-        .tab()
-        ;
+    //Make tab
+    $('.menu .item').tab();
 });
