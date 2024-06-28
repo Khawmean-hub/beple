@@ -88,7 +88,7 @@ function getSrc(htmlStr) {
  */
 function makeEditor(){
     leftEditor  = applyEditor('box1')
-    rightEditor = applyEditor('box2')
+    rightEditor = applyEditor('box2', true)
     topEditor   = applyEditor('newSrcBox')
     topEditorReal = applyEditor('newSrcBoxReal')
 
@@ -108,13 +108,14 @@ function makeEditor(){
  * @param {String} id 
  * @returns MirrorEditor
  */
-function applyEditor(id){
+function applyEditor(id, isReadOnly=false){
     return CodeMirror.fromTextArea(document.getElementById(id), {
         lineNumbers: true,
         mode: "text/html",
         //theme: "", // You can choose other themes
         matchBrackets: true,
         autoCloseTags: true,
+        readOnly: isReadOnly,
     });
 }
 
