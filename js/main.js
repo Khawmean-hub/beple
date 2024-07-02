@@ -1,4 +1,5 @@
 $(function () {
+
     $("#leftColumn").resizable({
         handles: 'e',
         resize: function (event, ui) {
@@ -11,7 +12,7 @@ $(function () {
     window.currentMode = MODE.DEV;
     setModeLooking()
     makeEditor();
-
     //Make tab
     $('.menu .item').tab();
+	$('.ui.accordion').accordion();
 });

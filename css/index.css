@@ -1,5 +1,4 @@
 .my_nav_bar {
-    background-color: #e36226;
     padding: 3px 30px;
     margin: 0 !important;
 }
@@ -16,6 +15,20 @@
     padding-top: 20px;
 }
 
+.pt_10 {
+    padding-top: 10px;
+}
+
+.mt_20 {
+    margin-top: 20px;
+}
+.mt_10 {
+    margin-top: 10px !important;
+}
+.mb_10 {
+    margin-bottom: 10px;
+}
+
 #container {
     display: flex;
     /* border: 1px solid #fff5f0; */
@@ -29,6 +42,9 @@
     /* height: 100vh; */
 }
 
+.align-right {
+    text-align: right;
+}
 
 #editor1,
 #editor2 {
@@ -78,7 +94,8 @@
 }
 
 body {
-    background: rgb(241, 241, 241);
+    background: #000000;
+    color: white;
 }
 
 .CodeMirror {
@@ -96,4 +113,17 @@ body {
 
 #replace_img_form label{
     margin-left: 30px !important;
+}
+
+.my_header {
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ui.toggle.checkbox .box:before, .ui.toggle.checkbox label:before {
+    background: grey !important;
+}
+.ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before {
+    background: #f2711c !important;
 }

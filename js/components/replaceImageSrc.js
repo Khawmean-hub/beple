@@ -1,11 +1,13 @@
 //================================================= Variables =================================================
 const imgSrcReg = /<img\s+[^>]*?src\s*=\s*(["'])([^"]+)\1/g;
 const onlyLatSlash = /\/([^\/]+)$/;
+const findReplace  = 'href="#none" target="_blank"';
 let leftEditor;
 let rightEditor;
 let topEditor;
 let topEditorReal;
-
+let scriptBox;
+let previewBox;
 //================================================= Events =================================================
 // $(document).on('input', '#newSrcBox, #box1, #newSrcBoxReal', onReplace)
 $(document).on('click', '#btn_copy', onCopy)
@@ -52,6 +54,16 @@ function onReplace(isOnCheck) {
         }
     })
 
+    if(scriptBox.getValue()){
+        newValueForRightBox = newValueForRightBox + `
+<script>
+${scriptBox.getValue()}
+</script>
+        `
+    }
+
+    newValueForRightBox = newValueForRightBox.replaceAll(findReplace, '')
+
     rightEditor.setValue(newValueForRightBox)
     setModeLooking()
 }
@@ -91,6 +103,8 @@ function makeEditor(){
     rightEditor = applyEditor('box2', true)
     topEditor   = applyEditor('newSrcBox')
     topEditorReal = applyEditor('newSrcBoxReal')
+    scriptBox     = applyEditorJs('box3')
+    previewBox    = applyEditorJs('preview_code', true, false)
 
     leftEditor.on('change', function() {
         onReplace()
@@ -99,6 +113,9 @@ function makeEditor(){
         onReplace()
     });
     topEditorReal.on('change', function() {
+        onReplace()
+    });
+    scriptBox.on('change', function() {
         onReplace()
     });
 }
@@ -112,9 +129,23 @@ function applyEditor(id, isReadOnly=false){
     return CodeMirror.fromTextArea(document.getElementById(id), {
         lineNumbers: true,
         mode: "text/html",
+        theme: 'blackboard',
         //theme: "", // You can choose other themes
         matchBrackets: true,
         autoCloseTags: true,
+        readOnly: isReadOnly,
+    });
+}
+
+
+function applyEditorJs(id, isReadOnly = false, line = true){
+    return CodeMirror.fromTextArea(document.getElementById(id), {
+        mode: { name: 'javascript', json: true },
+        lineNumbers: line,
+        matchBrackets: true,
+        autoCloseBrackets: true,
+        theme: 'blackboard',
+        statementIndent: 2,
         readOnly: isReadOnly,
     });
 }
