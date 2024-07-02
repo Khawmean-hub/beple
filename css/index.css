@@ -127,3 +127,15 @@ body {
 .ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before {
     background: #f2711c !important;
 }
+
+/* .CodeMirror {
+    min-height: 200px !important;
+} */
+
+#img_replace .field .CodeMirror{
+    min-height: 100px !important;
+}
+
+#other_editor .CodeMirror {
+    min-height: 300px;
+}
